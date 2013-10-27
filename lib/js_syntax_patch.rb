@@ -20,8 +20,7 @@ module Redmine
           language = ::CodeRay::FileType[filename]
           text = ERB::Util.h(text) if encoding
           language = :plaintext if [:yaml, :scheme, :debug].include?(language) 
-          #"<pre class=\"brush: #{language}\">#{text}</pre>"
-          text
+          "<pre class=\"brush: #{language}\">#{text}</pre>"
         end
         
         def highlight_by_language(text, language, encoding=true)
